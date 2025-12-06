@@ -1,4 +1,7 @@
 
+
+Estas funciones tienen mejor compativilidad en Ubuntu o Debian.
+
 [gor]
 
 Diseñada exclusivamente para anonimato local y para evadir el rastreo o filtrado basado en MAC en la red a la que estás físicamente conectado.
