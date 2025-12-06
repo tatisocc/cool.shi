@@ -11,7 +11,7 @@
 
 [gor]
 
-Diseñada exclusivamente para anonimato local y para evadir el rastreo o filtrado basado en MAC en la red a la que estás físicamente conectado. (Usar antes de navegar en Tor)
+Diseñada exclusivamente para anonimato local. (Usar antes de navegar en Tor)
 
 [goto]
 
