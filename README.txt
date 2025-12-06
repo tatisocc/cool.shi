@@ -16,3 +16,7 @@ Diseñada exclusivamente para anonimato local y para evadir el rastreo o filtrad
 [goto]
 
 Diseñada exclusivamente para buscar y navegar en archivos creados por el usuario.
+
+[fuck]
+
+Diseñada para la eliminación profunda de aplicaciones. USAR CON EXTREMO CUIDADO.
