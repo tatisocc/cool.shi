@@ -3,6 +3,11 @@
     # sudo apt update
     # sudo apt install macchanger iw
 
+# Si se tiene instalado Tor, este comando como alias facilitará el uso y cambio de MAC antes de navegar. 
+
+    # alias tor='gor && ( torbrowser-launcher & disown )'
+    
+
 gor() {
     command -v iw >/dev/null || { echo "ERROR: iw no está instalado."; return 1; }
     command -v macchanger >/dev/null || { echo "ERROR: macchanger no está instalado."; return 1; }
