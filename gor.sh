@@ -1,12 +1,12 @@
 # Requisitos para gor:
 
-    # sudo apt update
-    # sudo apt install macchanger iw
+# sudo apt update
+# sudo apt install macchanger iw
 
 # Si se tiene instalado Tor, este comando como alias facilitará el uso y cambio de MAC antes de navegar. 
 
-    # alias tor='gor && ( torbrowser-launcher & disown )'
-    
+# alias tor='gor && ( torbrowser-launcher & disown )'
+ 
 
 gor() {
     command -v iw >/dev/null || { echo "ERROR: iw no está instalado."; return 1; }
@@ -30,15 +30,18 @@ gor() {
     echo "Usando interfaz: $IFACE"
     echo "Bajando interfaz..."
     sudo ip link set "$IFACE" down
-    echo "Cambiando MAC Address..."
-    sudo macchanger -r "$IFACE"
+    
+    echo "Cambiando MAC Address (Random y Burned-in simulado)..."
+    # CAMBIO 1: Se añade -b para simular BIA/Burned-in Address
+    sudo macchanger -r -b "$IFACE"
+    
     echo "Levantando interfaz..."
     sudo ip link set "$IFACE" up
-    echo "Limpiando direcciones IP..."
-    sudo ip addr flush dev "$IFACE"
-    echo "Renovando DHCP..."
-    sudo dhclient -r "$IFACE" 2>/dev/null
-    sudo dhclient "$IFACE" 2>/dev/null
+    
+    # CAMBIO 2: Se eliminan 'ip addr flush' y 'dhclient' para evitar la filtración del hostname vía DHCP.
+    echo "La red ha sido reestablecida, pero la solicitud de IP (DHCP) se omite por seguridad."
+    echo "Conéctese/solicite IP con una herramienta que oculte el Hostname (ej. Tor)."
+    
     echo "Nueva MAC:"
     sudo macchanger -s "$IFACE" | grep Current
 }
