@@ -1,7 +1,11 @@
 # Requisitos para gor:
+# Ubuntu / Debian
+  # sudo apt update
+  # sudo apt install macchanger iw
+# Arch
+  # sudo pacman -Syu
+  # sudo pacman -S macchanger iw
 
-# sudo apt update
-# sudo apt install macchanger iw
 
 # Si se tiene instalado Tor, este comando como alias facilitará el uso y cambio de MAC antes de navegar. 
 
